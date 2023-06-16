@@ -1,0 +1,23 @@
+ FIRST ATTEMPT
+ 
+ <% date_limit = Date.today -  package.expected_arrival %>
+
+      <% if date_limit > 3  %>
+
+      <div style="color: red">
+        Supposed to arrive on <%= package.expected_arrival %>
+      </div>
+
+      <% else %>
+      
+      <div style="">
+        Supposed to arrive on <%= package.expected_arrival %>
+      </div>
+      <% end %>
+
+
+SECOND ATTEMPT
+
+            <% days_old = Date.today - Date.parse(package.expected_arrival.to_s) %>
+
+      <%= days_old.to_i%>

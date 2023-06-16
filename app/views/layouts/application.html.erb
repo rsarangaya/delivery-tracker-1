@@ -16,6 +16,29 @@
   </head>
 
   <body>
+  <nav>
+
+  <% if session[:user_id] == nil %>
+    <a href="/user_sign_in">Sign In</a> |
+    <a href="/user_sign_up">Sign Up</a> 
+
+
+  <% else %>
+
+    <a href="/">Your Packages</a> |
+    <a href="/edit_user_profile">Edit profile</a> |
+    <a href="/user_sign_out">Sign Out</a>
+
+    <% end %>
+    </nav>
+
+    <div>
+
+    <%= notice %>
+    <%= alert %>
+
+    </div>
+
     <%= yield %>
   </body>
 </html>
